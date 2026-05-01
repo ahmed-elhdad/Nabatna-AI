@@ -5,7 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
-
+data/
+.vscode
+saved_models
+notebooks
 # Distribution / packaging
 .Python
 build/
