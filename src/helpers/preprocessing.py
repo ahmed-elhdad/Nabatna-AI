@@ -2,46 +2,33 @@ import cv2
 
 from config import get_settings
 from check_path_exits import check_path_exits
-from verify_image import is_blurry,is_corrupted
-settings=get_settings()
+from verify_image import is_blurry, is_corrupted
+
+settings = get_settings()
 import os
+
 """""
 This file is responsible fr
 """
 from PIL import Image
 
-# def clean_data(data_path:str):
-    
-#     """""
-#         1- check if path is exit
-#         2- verify the image
-#     """
-#     exits=check_path_exits(data_path)
-#     if exits:
-#         for root, dirs, files in os.walk(data_path):
-#             for file in files:
-#                 path = os.path.join(root, file)
+import os
+from PIL import Image
 
-#                 try:
-#                     if is_corrupted(path):
-
-#                         print("Deleting corrupted:", path)
-#                         os.remove(path)
-#                     if is_blurry(path):
-#                         print("Deleting blurry:", path)
-#                         os.remove(path)
-#                 except Exception as e:
-#                     print(f"Error:{e}")
+settings = get_settings()
+"""""
+This file is responsible fr
+"""
 
 
-def preprocessing(data_path:str):
+def preprocessing(data_path: str):
     if check_path_exits(data_path) is False:
-        print('Folder not found Error')
+        print("Folder not found Error")
         return
     for label in os.listdir(data_path):
         raw_folder = os.path.join(data_path, label)
         processed_folder = os.path.join(settings.PROCESSED_DATA_PATH, label)
- 
+
         os.makedirs(processed_folder, exist_ok=True)
 
         for img_name in os.listdir(raw_folder):
@@ -64,12 +51,13 @@ def preprocessing(data_path:str):
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
                 save_path = os.path.join(processed_folder, img_name)
-                
+
                 cv2.imwrite(save_path, img)
             except Exception as e:
                 print(f"Error processing {img_name}: {e}")
                 continue
-            
+
+
 preprocessing(settings.RAW_DATA_PATH)
 # preprocessing(settings.CUSTOM_DATA_PATH)
 # print(settings.APP_NAME)
