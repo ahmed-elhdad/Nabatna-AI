@@ -9,6 +9,7 @@ data/
 .vscode
 saved_models
 notebooks
+view
 # Distribution / packaging
 .Python
 build/
