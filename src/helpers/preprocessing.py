@@ -52,6 +52,7 @@ def preprocessing(data_path:str):
 
                 if img is None:
                     continue
+                print(f"Verifying the image {img_path}")
                 if is_corrupted(img_path):
                     print(f"🗑️ Deleting corrupted {img_name}")
                     os.remove(img_path)
@@ -64,7 +65,7 @@ def preprocessing(data_path:str):
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
                 save_path = os.path.join(processed_folder, img_name)
-                
+
                 cv2.imwrite(save_path, img)
             except Exception as e:
                 print(f"Error processing {img_name}: {e}")
