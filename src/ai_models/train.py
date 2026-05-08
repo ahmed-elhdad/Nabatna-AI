@@ -72,3 +72,4 @@ with tf.device("/GPU:0"):
     import joblib
 
     joblib.dump(model, settings.TRAINED_MODEL_PATH)
+    
