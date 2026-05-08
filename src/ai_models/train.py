@@ -1,4 +1,4 @@
-from src.utils.data_loader import load_data
+from src.helpers.data_loader import load_data
 from src.helpers.config import get_settings
 import tensorflow as tf
 from tensorflow.keras import layers, models
