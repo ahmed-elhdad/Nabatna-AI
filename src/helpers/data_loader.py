@@ -22,3 +22,4 @@ def load_data():
         class_mode='categorical',
         subset='validation'
     )
+    return train_data, val_data
