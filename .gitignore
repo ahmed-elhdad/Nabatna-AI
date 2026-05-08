@@ -130,7 +130,9 @@ __pypackages__/
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
-
+saved_models/
+.vscode
+notebooks
 # Redis
 *.rdb
 *.aof
