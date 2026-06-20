@@ -19,7 +19,13 @@ class Settings(BaseSettings):
     FILE_ALLOWED_TYPES: List[str] = ["image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"]
     FILE_MAX_SIZE: Optional[int] = 1048576
     
+    MONGODB_USERNAME: Optional[str] = None
+    MONGODB_PASSWORD: Optional[str] = None
+    MONGODB_URI: Optional[str] = None
 
+    JWT_SECRET_KEY: str
+    JWT_ALGORITHM: str 
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: Optional[int] = 60
     model_config = {
         "env_file": ".env",
         "extra": "ignore",
