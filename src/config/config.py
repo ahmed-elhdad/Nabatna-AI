@@ -23,9 +23,24 @@ class Settings(BaseSettings):
     MONGODB_PASSWORD: Optional[str] = None
     MONGODB_URI: Optional[str] = None
 
+<<<<<<< HEAD
     JWT_SECRET_KEY: str
     JWT_ALGORITHM: str 
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: Optional[int] = 60
+=======
+    MONGODB_USERNAME:str
+    MONGODB_PASSWORD:str
+    MONGODB_URI:str
+    FILE_MAX_SIZE:int
+    FILE_DEFAULT_CHUNK_SIZE:int
+
+    JWT_SECRET_KEY:str
+    JWT_ALGORITHM:str
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES:int
+
+    GOOGLE_CLIENT_ID:str
+    GOOGLE_CLIENT_SECRET:str
+>>>>>>> chat
     model_config = {
         "env_file": ".env",
         "extra": "ignore",
