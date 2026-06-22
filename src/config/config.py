@@ -20,6 +20,18 @@ class Settings(BaseSettings):
     FILE_MAX_SIZE: Optional[int] = 1048576
     
 
+    MONGODB_USERNAME:str
+    MONGODB_PASSWORD:str
+    MONGODB_URI:str
+    FILE_MAX_SIZE:int
+    FILE_DEFAULT_CHUNK_SIZE:int
+
+    JWT_SECRET_KEY:str
+    JWT_ALGORITHM:str
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES:int
+
+    GOOGLE_CLIENT_ID:str
+    GOOGLE_CLIENT_SECRET:str
     model_config = {
         "env_file": ".env",
         "extra": "ignore",
